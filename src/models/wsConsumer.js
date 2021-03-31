@@ -218,6 +218,9 @@ class WebSocketConsumer extends WsCommon {
     USERS_RECEIVED: (payload) => {
       this.emit("usersReceived", payload);
     },
+    RECEIVED_NOTIFICATION: (payload) => {
+      this.emit("notificationReceived", payload);
+    },
   };
 
   outgoingActions = [

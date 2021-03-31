@@ -88,8 +88,9 @@ class WebSocketClient extends WsCommon {
     if (typeof target_token === "string") {
       this.target_token = target_token;
     }
+    console.log(`${this.ws_url}?access_token=${this.access_token}`);
     this.instance = new W3CWebSocket(
-      `${this.ws_url}?access_token=${this.access_token}&target_token=${this.target_token}`,
+      `${this.ws_url}?access_token=${this.access_token}`,
       "echo-protocol",
       "origin",
       { Authorization: `Bearer ${access_token}` }

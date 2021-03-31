@@ -12,9 +12,13 @@ const wsClient = new WsConsumer({
   api_url: API_URL,
   access_token:
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDY0NWNkODhhNTc5Y2Y1MjA0ODRhMjIiLCJuYW1lIjoiZG9jdG9yMSIsInBhc3N3b3JkIjoiMjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzAiLCJ1c2VyVHlwZSI6ImRvY3RvciIsImZpcnN0TmFtZSI6ItCd0LjQutC-0LvQsNC5IiwibGFzdE5hbWUiOiLQotC10YDQtdGF0L7QsiIsImNvbmZlcmVuY2VUb2tlbiI6bnVsbCwiY29uZmVyZW5jZUlkIjoiNjA2NDVjZDg4YTU3OWNmNTIwNDg0YTIyIiwidXNlciI6ImRvY3RvcjEiLCJpYXQiOjE2MTcxOTA3MjJ9.qzHBmNUVT3kYIERKFU7z4wLcxbU0HdpqE0uyxKdy408",
-  target_token: undefined,
+  //  target_token: undefined,
   debug: true,
 });
 wsClient.on("connected", () => {
   wsClient.sendNotification("Sended message !!! ");
+});
+wsClient.on("notificationReceived", (data) => {
+  console.log("notificationReceived", data);
+  //store.dispatch(fetchChatUsersSuccess(data));
 });
